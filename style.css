@@ -1,0 +1,236 @@
+/* Estilo base para o body e elementos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --bg-login: url('./assets/login-bg.jpg');
+  --bg-color: #1E1E1E;
+  --color-cinza: #e2e2e2;
+  --color-roxo: #833d96;
+}
+
+body {
+  background-color: var(--bg-color);
+  line-height: 1.5rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.imagem-login {
+  background-image: var(--bg-login);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 2.5rem;
+  border-radius: 1rem;
+}
+
+.imagem-login p {
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.imagem-login span {
+  color: #e83e8c;
+  font-size: 1rem;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 3.25rem 4.75rem;
+  background: rgba(0, 0, 0, 0.6); /* Para melhorar a visibilidade do formulário */
+  border-radius: 1rem;
+}
+
+.login img {
+  height: 12rem;
+  margin-bottom: 1.5rem;
+  object-fit: contain;
+}
+
+.formulario-grupo, .formulario-grupo input {
+  width: 100%;
+}
+
+.formulario-grupo label {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-cinza);
+  text-align: left;
+  margin-bottom: .5rem;
+}
+
+.formulario-grupo input {
+  margin-top: .5rem;
+  border: none;
+  border-radius: 0.313rem;
+  padding: 0.75rem;
+  background: #121212;
+  height: initial;
+  font-size: 1rem;
+  color: var(--color-cinza);
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.formulario-grupo input:focus {
+  outline: 0.063rem solid var(--color-roxo);
+  cursor: pointer;
+}
+
+.checkbox-div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.checkbox-div input[type=checkbox] {
+  margin-right: 1.25rem;
+}
+
+.checkbox-div input[type=checkbox]:before {
+  cursor: pointer;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: .25rem;
+  background-color: #121212;
+  border: 1px solid #833d96;
+}
+
+.checkbox-div input[type=checkbox]:checked:before {
+  content: '\2714';
+  font-size: .875rem;
+  color: var(--color-roxo);
+  text-align: center;
+}
+
+.checkbox-div label {
+  margin-top: .5rem;
+  cursor: pointer;
+  color: var(--color-cinza);
+}
+
+button {
+  border: none;
+  border-radius: 2.438rem;
+  min-width: 7.5rem;
+  width: 50%;
+  height: 3.25rem;
+  align-items: center;
+  font-size: 1rem;
+  background: var(--color-roxo);
+  color: var(--color-cinza);
+  cursor: pointer;
+  transition: 0.80s;
+  margin-top: 1.5rem;
+}
+
+button:hover {
+  background-color: var(--color-cinza);
+  color: var(--color-roxo);
+}
+
+.redefine-senha {
+  text-decoration: none;
+  color: var(--color-cinza);
+  font-size: .9rem;
+  margin-top: 20px;
+}
+
+.redefine-senha:hover {
+  color: var(--color-roxo);
+  transition: 0.80s;
+  text-decoration: underline;
+}
+
+.whats-app {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 1.625rem;
+  margin-bottom: 1.625rem;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.whats-app:hover {
+  transform: scale(1.5);
+}
+
+@media (max-width: 750px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .imagem-login {
+    display: none; /* Ocultar imagem no celular */
+  }
+
+  .login {
+    padding: 2rem;
+    width: 90%; /* Ajuste para ocupar a tela */
+  }
+
+  .login img {
+    height: 10rem; /* Reduzir a imagem no mobile */
+    margin-bottom: 1rem;
+  }
+
+  .formulario-grupo input {
+    font-size: 1.1rem;
+  }
+
+  button {
+    width: 80%; /* Botão maior para telas menores */
+    font-size: 1.2rem;
+  }
+
+  .redefine-senha {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  /* Para telas menores, como celulares em modo retrato */
+  .login {
+    padding: 1.5rem;
+  }
+
+  .formulario-grupo input {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  .redefine-senha {
+    font-size: 1rem;
+  }
+}
